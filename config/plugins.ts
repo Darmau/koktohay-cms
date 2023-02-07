@@ -16,12 +16,6 @@ module.exports = ({ env }) => ({
     enabled: true,
   },
 
-  plausible: {
-    config: {
-      sharedLink: `${env('PLAUSIBLE_DOMAIN')}/${env('PLAUSIBLE_PARAMS')}`,
-    }
-  },
-
   "rest-cache": {
     config: {
       provider: {
