@@ -8,6 +8,43 @@ module.exports = ({ env }) => ({
           field: 'slug',
           references: 'title',
         },
+        album: {
+          field: 'slug',
+          references: 'title',
+        },
+        video: {
+          field: 'slug',
+          references: 'title',
+        },
+        portfolio: {
+          field: 'slug',
+          references: 'title',
+        },
+        articleCategory: {
+          field: 'slug',
+          references: 'title',
+        },
+        articleTag: {
+          field: 'slug',
+          references: 'title',
+        },
+        albumCategory: {
+          field: 'slug',
+          references: 'title',
+        },
+      },
+    },
+  },
+
+  graphql: {
+    config: {
+      endpoint: '/graphql',
+      shadowCRUD: true,
+      playgroundAlways: false,
+      depthLimit: 7,
+      amountLimit: 100,
+      apolloServer: {
+        tracing: false,
       },
     },
   },
