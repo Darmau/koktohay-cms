@@ -1,41 +1,5 @@
 module.exports = ({ env }) => ({
 
-  slugify: {
-    enabled: true,
-    config: {
-      contentTypes: {
-        article: {
-          field: 'slug',
-          references: 'title',
-        },
-        album: {
-          field: 'slug',
-          references: 'title',
-        },
-        video: {
-          field: 'slug',
-          references: 'title',
-        },
-        portfolio: {
-          field: 'slug',
-          references: 'title',
-        },
-        articleCategory: {
-          field: 'slug',
-          references: 'title',
-        },
-        articleTag: {
-          field: 'slug',
-          references: 'title',
-        },
-        albumCategory: {
-          field: 'slug',
-          references: 'title',
-        },
-      },
-    },
-  },
-
   graphql: {
     config: {
       endpoint: '/graphql',
