@@ -21,8 +21,6 @@ module.exports = ({env}) => ([
             // 'dl.airtable.com',
             `${env('HK_BUCKET')}.${env('HK_ENDPOINT')}`,
           ],
-          upgradeInsecureRequests: null,
-          'frame-src': [env('PLAUSIBLE_DOMAIN')],
         },
       },
     },
