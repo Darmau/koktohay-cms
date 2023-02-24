@@ -32,13 +32,18 @@ module.exports = ({ env }) => ({
     },
   },
 
-  ezforms:{
-    config:{
+  ezforms: {
+    config: {
       captchaProvider: {
         name: 'none',
       },
       notificationProviders: []
     }
-}
+  },
+
+  'editorjs': {
+    enabled: true,
+    resolve: './src/plugins/strapi-plugin-editorjs'
+  },
 
 });

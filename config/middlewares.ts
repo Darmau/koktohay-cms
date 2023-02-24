@@ -1,4 +1,4 @@
-module.exports = ({env}) => ([
+module.exports = ({ env }) => ([
   'strapi::errors',
   {
     name: 'strapi::security',
@@ -8,19 +8,32 @@ module.exports = ({env}) => ([
         directives: {
           'connect-src': ["'self'", 'https:'],
           'img-src': [
-            "'self'",
-            'data:',
-            'blob:',
+            '*',
+            // "'self'",
+            // 'data:',
+            // 'blob:',
             // 'dl.airtable.com',
-            `${env('HK_BUCKET')}.${env('HK_ENDPOINT')}`,
+            // 'twitter.com',
+            // 'pbs.twimg.com',
+            // 'youtube.com',
+            // 'ytimg.com',
+            // `${env('HK_BUCKET')}.${env('HK_ENDPOINT')}`,
           ],
           'media-src': [
             "'self'",
             'data:',
             'blob:',
-            // 'dl.airtable.com',
+            'dl.airtable.com',
+            'twitter.com',
+            'pbs.twimg.com',
+            'youtube.com',
+            'ytimg.com',
             `${env('HK_BUCKET')}.${env('HK_ENDPOINT')}`,
           ],
+          'frame-src': [
+            '*',
+          ],
+          upgradeInsecureRequests: null,
         },
       },
     },
