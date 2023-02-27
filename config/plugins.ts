@@ -8,7 +8,7 @@ module.exports = ({ env }) => ({
       depthLimit: 7,
       amountLimit: 100,
       apolloServer: {
-        tracing: false,
+        tracing: true,
       },
     },
   },
@@ -39,11 +39,6 @@ module.exports = ({ env }) => ({
       },
       notificationProviders: []
     }
-  },
-
-  'editorjs': {
-    enabled: true,
-    resolve: './src/plugins/strapi-plugin-editorjs'
   },
 
 });
