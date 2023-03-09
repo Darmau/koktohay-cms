@@ -4,8 +4,8 @@ module.exports = ({ env }) => ({
     config: {
       endpoint: '/graphql',
       shadowCRUD: true,
-      playgroundAlways: true,
-      depthLimit: 7,
+      playgroundAlways: false,
+      depthLimit: 10,
       amountLimit: 100,
       apolloServer: {
         tracing: true,
@@ -35,8 +35,12 @@ module.exports = ({ env }) => ({
   ezforms: {
     config: {
       captchaProvider: {
-        name: 'none',
+        name: 'recaptcha',
+        config: {
+          secretKey: env('RECAPTCHA_SECRET_KEY'),
+        }
       },
+      enableFormName: true,
       notificationProviders: []
     }
   },
