@@ -4,11 +4,13 @@ module.exports = ({ env }) => ({
     config: {
       endpoint: '/graphql',
       shadowCRUD: true,
-      playgroundAlways: true,
-      depthLimit: 7,
-      amountLimit: 100,
+      playgroundAlways: false,
+      depthLimit: 10,
+      amountLimit: 500,
+      defaultLimit: 500,
+      maxLimit: 1000,
       apolloServer: {
-        tracing: true,
+        tracing: false,
       },
     },
   },
@@ -37,6 +39,7 @@ module.exports = ({ env }) => ({
       captchaProvider: {
         name: 'none',
       },
+      enableFormName: true,
       notificationProviders: []
     }
   },

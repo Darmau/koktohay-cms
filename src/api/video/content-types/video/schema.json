@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "articles",
+  "collectionName": "videos",
   "info": {
-    "singularName": "article",
-    "pluralName": "articles",
-    "displayName": "Article",
+    "singularName": "video",
+    "pluralName": "videos",
+    "displayName": "Video",
     "description": ""
   },
   "options": {
@@ -22,21 +22,8 @@
           "localized": true
         }
       },
-      "type": "string"
-    },
-    "main": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "customField",
-      "options": {
-        "output": "HTML",
-        "preset": "rich",
-        "maxLengthCharacters": null
-      },
-      "customField": "plugin::ckeditor.CKEditor"
+      "type": "string",
+      "required": true
     },
     "description": {
       "pluginOptions": {
@@ -53,8 +40,8 @@
         }
       },
       "type": "datetime",
-      "default": "2023-12-16T04:16:00.000Z",
-      "required": true
+      "required": true,
+      "default": "2023-12-16T04:16:00.000Z"
     },
     "isFeatured": {
       "pluginOptions": {
@@ -63,8 +50,7 @@
         }
       },
       "type": "boolean",
-      "default": false,
-      "required": false
+      "default": false
     },
     "cover": {
       "type": "media",
@@ -79,14 +65,39 @@
         }
       }
     },
-    "url": {
+    "bilibili": {
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
       },
-      "type": "string",
-      "required": true
+      "type": "text"
+    },
+    "xigua": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "text"
+    },
+    "youtube": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "text"
+    },
+    "relatives": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "relative.videos"
     },
     "slug": {
       "pluginOptions": {
@@ -95,29 +106,17 @@
         }
       },
       "type": "uid",
-      "targetField": "url"
+      "targetField": "title",
+      "required": false
     },
-    "article_category": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::article-category.article-category",
-      "inversedBy": "articles"
-    },
-    "topic": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::topic.topic",
-      "inversedBy": "articles"
-    },
-    "relative": {
-      "type": "component",
-      "repeatable": false,
+    "url": {
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
-      "component": "relative.content"
+      "type": "string",
+      "required": true
     }
   }
 }

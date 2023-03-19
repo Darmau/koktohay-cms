@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_relative_albums",
+  "info": {
+    "displayName": "albums"
+  },
+  "options": {},
+  "attributes": {
+    "relative_articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article"
+    },
+    "relative_videos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::video.video"
+    }
+  }
+}

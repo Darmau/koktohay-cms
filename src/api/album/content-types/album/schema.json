@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "articles",
+  "collectionName": "albums",
   "info": {
-    "singularName": "article",
-    "pluralName": "articles",
-    "displayName": "Article",
+    "singularName": "album",
+    "pluralName": "albums",
+    "displayName": "Album",
     "description": ""
   },
   "options": {
@@ -22,21 +22,8 @@
           "localized": true
         }
       },
-      "type": "string"
-    },
-    "main": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "customField",
-      "options": {
-        "output": "HTML",
-        "preset": "rich",
-        "maxLengthCharacters": null
-      },
-      "customField": "plugin::ckeditor.CKEditor"
+      "type": "string",
+      "required": true
     },
     "description": {
       "pluginOptions": {
@@ -53,8 +40,8 @@
         }
       },
       "type": "datetime",
-      "default": "2023-12-16T04:16:00.000Z",
-      "required": true
+      "required": true,
+      "default": "2023-12-16T04:16:00.000Z"
     },
     "isFeatured": {
       "pluginOptions": {
@@ -63,13 +50,12 @@
         }
       },
       "type": "boolean",
-      "default": false,
-      "required": false
+      "default": false
     },
-    "cover": {
+    "gallery": {
       "type": "media",
-      "multiple": false,
-      "required": false,
+      "multiple": true,
+      "required": true,
       "allowedTypes": [
         "images"
       ],
@@ -79,14 +65,42 @@
         }
       }
     },
-    "url": {
+    "location": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "album_category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::album-category.album-category",
+      "inversedBy": "albums"
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ],
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
+      }
+    },
+    "relatives": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
       },
-      "type": "string",
-      "required": true
+      "component": "relative.albums"
     },
     "slug": {
       "pluginOptions": {
@@ -95,29 +109,16 @@
         }
       },
       "type": "uid",
-      "targetField": "url"
+      "targetField": "title"
     },
-    "article_category": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::article-category.article-category",
-      "inversedBy": "articles"
-    },
-    "topic": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::topic.topic",
-      "inversedBy": "articles"
-    },
-    "relative": {
-      "type": "component",
-      "repeatable": false,
+    "url": {
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
-      "component": "relative.content"
+      "type": "string",
+      "required": true
     }
   }
 }
