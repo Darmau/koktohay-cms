@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "update_logs",
+  "info": {
+    "singularName": "update-log",
+    "pluralName": "update-logs",
+    "displayName": "Update Log",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Logs": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "update.version"
+      ],
+      "required": true
+    }
+  }
+}
