@@ -37,10 +37,7 @@ module.exports = ({ env }) => ({
   ezforms: {
     config: {
       captchaProvider: {
-        name: 'recaptcha',
-        config: {
-          secretKey: env('RECAPTCHA_SECRET_KEY'),
-        }
+        name: 'none',
       },
       enableFormName: true,
       notificationProviders: []
