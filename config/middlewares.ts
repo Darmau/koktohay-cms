@@ -17,6 +17,8 @@ module.exports = ({ env }) => ([
             'youtube.com',
             'ytimg.com',
             `${env('HK_BUCKET')}.${env('HK_ENDPOINT')}`,
+            'darmau-image-1256887306.cos.accelerate.myqcloud.com',
+            'darmau-image-1256887306.cos.ap-hongkong.myqcloud.com',
           ],
           'media-src': [
             "'self'",
@@ -28,6 +30,8 @@ module.exports = ({ env }) => ([
             'youtube.com',
             'ytimg.com',
             `${env('HK_BUCKET')}.${env('HK_ENDPOINT')}`,
+            'darmau-image-1256887306.cos.accelerate.myqcloud.com',
+            'darmau-image-1256887306.cos.ap-hongkong.myqcloud.com',
           ],
           'frame-src': [
             '*',
